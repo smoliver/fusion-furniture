@@ -1,0 +1,13 @@
+<!DOCTYPE HTML>
+<head>
+	{% load compress %}
+	{% load static %}
+
+	{% compress css %}
+		<link rel="stylesheet" type="text/x-scss" href="{% static '{{ app_name }}/styles/style.scss' %}">
+	{% endcompress %}
+
+</head>
+<body>
+	
+</body>
