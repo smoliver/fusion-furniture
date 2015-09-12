@@ -117,7 +117,7 @@ STATICFILES_DIRS = (
 
 
 # COMPRESS_ROOT = 'fusion_furniture/static/fusion_furniture/compress/'
-COMPRESS_ROOT = 'fusion_furniture/static'
+COMPRESS_ROOT = './static'
 
 COMPRESS_PRECOMPILERS= (
     ('text/x-scss', 'django_libsass.SassCompiler'),
