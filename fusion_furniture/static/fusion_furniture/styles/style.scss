@@ -1,3 +1,19 @@
-* {
-	background: blue;
+$light-grey: #F5F5F5;
+$off-white: #FAFAFA;
+$white: #FFFFFF;
+
+body {
+	margin: 0;
+	padding: 0;
+
+}
+
+
+#tool-bar {
+	position: fixed;
+	left: 0;
+	top: 0;
+	height: 48px;
+	width: 100%;
+	background-color: $light-grey;
 }
