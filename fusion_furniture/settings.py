@@ -101,9 +101,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/fusion_furniture/static/fusion_furniture/compress/'
+STATIC_URL = '/static/fusion_furniture/'
 
-STATIC_ROOT = '/fusion_furniture/static/fusion_furniture/compress/'
+STATIC_ROOT = '/static/fusion_furniture/'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -112,13 +112,12 @@ STATICFILES_FINDERS = (
 )
 
 STATICFILES_DIRS = (
+    join(BASE_DIR, 'static'),
     join(BASE_DIR, 'fusion_furniture', 'static'),
-    join(BASE_DIR, 'fusion_furniture', 'static', 'fusion_furniture', 'compress'),
-    join(BASE_DIR, 'fusion_furniture', 'static', 'fusion_furniture', 'compress', 'CACHE'),
 )
 
 
-COMPRESS_ROOT = 'fusion_furniture/static/fusion_furniture/compress/'
+COMPRESS_ROOT = 'static/fusion_furniture/'
 
 
 COMPRESS_PRECOMPILERS= (
