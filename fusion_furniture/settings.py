@@ -116,7 +116,7 @@ STATICFILES_DIRS = (
 )
 
 
-COMPRESS_ROOT = '/static/fusion_furniture/compress/'
+COMPRESS_ROOT = 'fusion_furniture/static/fusion_furniture/compress/'
 
 
 COMPRESS_PRECOMPILERS= (
