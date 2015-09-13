@@ -19,18 +19,29 @@ var Steps = function (){
 			$( "#furniture-type" ).addClass( "hidden" );
 		}
 
-		if (this.currentStep == 4){
-			$()
+		if (this.currentStep == 3){
+			$( "#complete" ).removeClass( "hidden" );
+			submit ();
+		}
+		else {
+			$( "#complete" ).addClass( "hidden" );
 		}
 	}
 
-	this.setTable = function (isTrue){
-		this.isTable = isTrue
+	this.setIsTable = function (isTrue){
+		this.isTable = isTrue;
 		this.setStep (1);
 	}
 
-	this.setSide = function (item){
-		item.
+	this.setSide = function (itemText){
+		if (currentStep == 1){
+			this.firstSide = itemText;
+			this.setStep (2);
+		}
+		else if (currentStep == 2){
+			this.secondSide = itemText;
+			this.setStep (3);
+		}
 	}
 
 	this.submit = function (){
@@ -54,19 +65,20 @@ $( document ).ready( function (){
 	var steps = new Steps ();
 
 	$( ".image-item" ).click( function (){
-		item.
+		$( this ).addClass( "active" );
+		var image = $( this ).find( "#image" );
+		var rawVal = image.css("background-image");
+		var url = "http://fusion-furniture.azurewebsites.net/" + rawVal.substring(4, rawVal.length-1); 
+		steps.setSide(url);
 	})
 
 	$( "#chair" ).click( function(){
-		steps.setTable (false);
+		steps.setIsTable (false);
 	})
 
 	$( "#table" ).click( function(){
-		steps.setTable (true);
+		steps.setIsTable (true);
 	})
-
-
-
 
 
 

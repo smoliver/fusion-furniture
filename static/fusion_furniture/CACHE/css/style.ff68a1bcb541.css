@@ -1,0 +1,55 @@
+/* line 9, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.hidden {
+  display: none; }
+
+/* line 13, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.active {
+  background-color: #DC98BA; }
+
+/* line 17, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FAFAFA; }
+
+/* line 24, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+#tool-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 72px;
+  width: 100%;
+  background-color: #F5F5F5; }
+
+/* line 33, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+section {
+  padding-top: 72px; }
+
+/* line 37, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.dropzone {
+  background-color: 200px;
+  background-color: red; }
+
+/* line 44, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.image-list {
+  text-align: center; }
+
+/* line 48, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.image-list > div {
+  display: inline-block;
+  text-align: center; }
+
+/* line 53, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.image-item {
+  display: inline-block;
+  margin: 8px;
+  padding: 24px;
+  background-color: #F5F5F5; }
+
+/* line 60, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.image {
+  width: 256px;
+  height: 256px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }

@@ -2,7 +2,17 @@ $light-grey: #F5F5F5;
 $off-white: #FAFAFA;
 $white: #FFFFFF;
 
+$electric: #DC98BA;
+
 $top-bar-height: 72px;
+
+.hidden {
+	display: none;
+}
+
+.active {
+	background-color: $electric;
+}
 
 body {
 	margin: 0;
@@ -29,6 +39,8 @@ section {
 	background-color: red;
 }
 
+
+
 .image-list {
 	text-align: center;
 }
@@ -52,3 +64,4 @@ section {
 	background-repeat: no-repeat;
 	background-position: center;
 }
+
