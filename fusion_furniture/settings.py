@@ -101,9 +101,9 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
-STATIC_URL = '/static/'
+STATIC_URL = 'fusion_furniture/static/fusion_furniture'
 
-STATIC_ROOT = '/static/'
+STATIC_ROOT = 'fusion_furniture/static/fusion_furniture'
 
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
