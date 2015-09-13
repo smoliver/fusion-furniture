@@ -113,6 +113,8 @@ STATICFILES_FINDERS = (
 
 STATICFILES_DIRS = (
     join(BASE_DIR, 'fusion_furniture', 'static'),
+    join(BASE_DIR, 'fusion_furniture', 'static', 'fusion_furniture', 'compress'),
+    join(BASE_DIR, 'fusion_furniture', 'static', 'fusion_furniture', 'compress', 'CACHE'),
 )
 
 
