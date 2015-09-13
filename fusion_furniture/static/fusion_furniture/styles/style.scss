@@ -2,6 +2,8 @@ $light-grey: #F5F5F5;
 $off-white: #FAFAFA;
 $white: #FFFFFF;
 
+$top-bar-height: 72px;
+
 body {
 	margin: 0;
 	padding: 0;
@@ -13,7 +15,40 @@ body {
 	position: fixed;
 	left: 0;
 	top: 0;
-	height: 48px;
+	height: $top-bar-height;
 	width: 100%;
 	background-color: $light-grey;
+}
+
+section {
+	padding-top: $top-bar-height;
+}
+
+.dropzone {
+	background-color: 200px;
+	background-color: red;
+}
+
+.image-list {
+	text-align: center;
+}
+
+.image-list>div {
+	display: inline-block;
+	text-align: center;
+}
+
+.image-item {
+	display: inline-block;
+	margin: 8px;
+	padding: 24px;
+	background-color: $light-grey;
+}
+
+.image {
+	width: 256px;
+	height: 256px;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
 }

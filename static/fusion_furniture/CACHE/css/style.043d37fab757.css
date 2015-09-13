@@ -1,0 +1,39 @@
+/* line 7, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #FAFAFA; }
+
+/* line 14, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+#tool-bar {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 72px;
+  width: 100%;
+  background-color: #F5F5F5; }
+
+/* line 23, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+section {
+  padding-top: 72px; }
+
+/* line 27, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.dropzone {
+  background-color: 200px;
+  background-color: red; }
+
+/* line 32, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.image-item {
+  display: inline-block;
+  float: left;
+  margin: 8px;
+  padding: 48px;
+  background-color: #F5F5F5; }
+
+/* line 40, /Users/samolive/Projects/2015-summer/fusion_furniture/fusion_furniture/static/fusion_furniture/styles/style.scss */
+.image {
+  width: 192px;
+  height: 192px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center; }

@@ -7,6 +7,8 @@
 		<link rel="stylesheet" type="text/x-scss" href="{% static 'fusion_furniture/styles/style.scss' %}">
 	{% endcompress %}
 
+	<script src="//cdn.firebase.com/v0/firebase.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
 	<script type="text/javascript" src="{% static 'scripts/jquery-1.11.2.min.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/dropzone.js' %}"></script>
 	<script type="text/javascript" src="{% static 'scripts/ui.js' %}"></script>
@@ -16,4 +18,18 @@
 </head>
 <body>
 	<div id="tool-bar"></div>
+	<section class="image-list">
+		<div>
+			<form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+			<div class="image-item">
+				<div class="image"></div>
+			</div>
+			{% for URL in URLData %}
+				<div class="image-item">
+					<div class="image" style="background-image: url(./image/{{URL}});"></div>
+				</div>
+			{% endfor %}
+		</div>
+	</section>
+	
 </body>
