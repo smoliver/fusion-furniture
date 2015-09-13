@@ -7,11 +7,9 @@
 		<link rel="stylesheet" type="text/x-scss" href="{% static 'fusion_furniture/styles/style.scss' %}">
 	{% endcompress %}
 
-	{% compress js %}
-		<script type="text/javascript" src="{% static 'fusion_furniture/scripts/jquery-1.11.2.min.js' %}"></script>
-		<script type="text/javascript" src="{% static 'fusion_furniture/scripts/dropzone.js' %}"></script>
-		<script type="text/javascript" src="{% static 'fusion_furniture/scripts/ui.js' %}"></script>
-	{% endcompress %}
+	<script type="text/javascript" src="{% static 'scripts/jquery-1.11.2.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/dropzone.js' %}"></script>
+	<script type="text/javascript" src="{% static 'scripts/ui.js' %}"></script>
 
 	<title>{% block title %}Fusion Furniture{% endblock %}</title>
 
