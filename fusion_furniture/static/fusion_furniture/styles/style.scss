@@ -281,3 +281,25 @@ p > *.active {
 	#email button:active {
 		background-color: $electric;
 	}
+
+#display-furniture {
+	padding-top: $top-bar-height;
+	display: table;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100vh;
+}
+
+#display-furniture > div {
+	display: table-cell;
+	width: 100%;
+	height: 100%;
+	vertical-align: middle;
+	text-align: center;
+}
+
+#display-furniture img {
+	margin: auto;
+}
+
+

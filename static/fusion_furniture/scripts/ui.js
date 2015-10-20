@@ -13,7 +13,6 @@ var Step = function (name, sectionId) {
 	}
 	//hide the section with id = sectionId
 	this.hide =  function () {
-		console.log( "yes" );
 		$( sectionId ).addClass( "left" );
 		setTimeout( function (){
 			$( sectionId ).addClass( "hidden" );
@@ -74,11 +73,11 @@ var ProgramSteps = function (){
 	this.setSide = function (itemText){
 		console.log( "currentStep" );
 		if (currentStep == FRONT_STEP){
-			this.front = itemText;
+			front = itemText;
 			this.setStep (SIDE_STEP);
 		}
 		else if (currentStep == SIDE_STEP){
-			this.side = itemText;
+			side = itemText;
 			this.setStep (EMAIL_STEP);
 		}
 	}
@@ -89,15 +88,45 @@ var ProgramSteps = function (){
 		this.setStep( DISPLAY_STEP );
 	}
 
+	var parseImage = function (rawString){
+		var start = rawString.indexOf('"', 0);
+		var end = rawString.indexOf('"', start + 1);
+		var concatStr = rawString.substr(start + 1, end - 1);
+		
+		var finishedStr = concatStr.replace(/(\\r\\n|\\n|\\r)/gm,"");
+		return finishedStr;
+	}
+
 	this.submit = function (){
-		var table = isTable ? 1 : 2;
+		var table = isTable ? 1 : 0;
 		var url = "https://www.wolframcloud.com/objects/3e4dcd10-28d8-44cd-9e9e-9851af261134?url1=" 
 		+ front + "&url2=" + side + "&email=" + email + "&table=" + table;
+		console.log(url);
 		$.get(url, function( data ) {
-	 		alert( "Data Loaded: " + data );
-			// decode data here
+	 		var srcDescription = "data:image/png;base64,"
+			var displayImage = $( "#display-furniture img" );
+			var imageText = parseImage(data);
+			displayImage.attr( "src", srcDescription + imageText );
+			hide( "#loading" )
+			show( displayImage );
 		});
 	}
+}
+
+function hide (id){
+	$( id ).addClass( "left" );
+		setTimeout( function (){
+			$( id ).addClass( "hidden" );
+		}, 50 );
+}
+
+function show (id) {
+	setTimeout( function (){
+		$( id ).removeClass( "hidden" );
+		setTimeout( function (){
+			$( id ).removeClass( "right" );
+		}, 50 );
+	}, 300);
 }
 
 
@@ -116,7 +145,7 @@ $( document ).ready( function (){
 		$( this ).addClass( "active" );
 		var image = $( this ).find( ".image" );
 		var rawVal = image.css("background-image");
-		var url = "http://fusion-furniture.azurewebsites.net/" + rawVal.substring(4, rawVal.length-1); 
+		var url = rawVal.substring(4, rawVal.length-1); 
 
 		programSteps.setSide(url);
 	})
@@ -140,14 +169,10 @@ $( document ).ready( function (){
 
 	$( "#select-email" ).click( function (){
 		var email = editEmail.text();
-		if (email === "" || email === emailDefaultText){
-
-		}
 		
-		programSteps.setEmail();
+		programSteps.setEmail(email);
 	})
 
-	console.log( "1" );
 	programSteps.start ();
 
 });
