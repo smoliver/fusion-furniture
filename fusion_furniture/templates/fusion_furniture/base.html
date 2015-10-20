@@ -14,16 +14,35 @@
 	<script type="text/javascript" src="{% static 'scripts/ui.js' %}"></script>
 
 	<title>{% block title %}Fusion Furniture{% endblock %}</title>
-
 </head>
+
 <body>
-	<div id="tool-bar"></div>
-	<section class="image-list">
+	<div id="tool-bar">
 		<div>
-			<form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
-			<div class="image-item">
-				<div class="image"></div>
+			<img class="logo" src="">
+			<p id="steps">
+			</p>
+		</div>
+	</div>
+
+	<section id="furniture-types" class="hidden right">
+		<div>
+			<div id="table">
+				<img src="{% static 'images/icon_table.png' %}">
+				<h3>Table</h3>
+			</div>	
+		</div>
+		<div>
+			<div id="chair">
+				<img src="{% static 'images/icon_chair.png' %}">
+				<h3>Chair</h3>
 			</div>
+		</div>
+	</section>
+
+	<section id="image-list" class="hidden right"> 
+		<form action="/file-upload" class="dropzone" id="my-awesome-dropzone"></form>
+		<div>
 			{% for URL in URLData %}
 				<div class="image-item">
 					<div class="image" style="background-image: url(./image/{{URL}});"></div>
@@ -31,9 +50,17 @@
 			{% endfor %}
 		</div>
 	</section>
-	<section class="furniture-types">
-		<div id="table"></div>
-		<div id="chair"></div>
+
+	<section id="email" class="hidden right">
+		<div>
+			<div>
+				<p id="edit-email" contentEditable="true">Email to...</p>
+				<button id="select-email">Fuse!</button>
+			</div>
+		</div>
 	</section>
-	
+
+	<section id="display-furniture" class="hidden right">
+	</section>
+
 </body>

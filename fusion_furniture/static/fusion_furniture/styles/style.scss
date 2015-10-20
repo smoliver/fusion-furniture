@@ -1,17 +1,32 @@
-$light-grey: #F5F5F5;
+$black: #330625;
+$light-grey: #D7D1D8;
+$white-grey: #F5F5F5;
 $off-white: #FAFAFA;
 $white: #FFFFFF;
 
-$electric: #DC98BA;
+$electric: #39EEF7;
 
 $top-bar-height: 72px;
 
 .hidden {
-	display: none;
+	display: none !important;
 }
 
-.active {
-	background-color: $electric;
+.right {
+	opacity: 0 !important; 
+	margin-left: 128px;
+}
+
+.left {
+	opacity: 0 !important;
+	margin-left: -64px;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	font-family: helvetica, arial, sans-serif;
+	font-weight: normal;
 }
 
 body {
@@ -20,48 +35,249 @@ body {
 	background-color: $off-white;
 }
 
+section {
+	padding-top: $top-bar-height;
+	margin: 0px 0px 0px 0px;
+	opacity: 1;
+	margin-left: 0px;
+	transition: opacity .3s, margin .3s ;
+}
 
+img {
+	display: block;
+}
+
+h1 {
+	font-size: 32pt;
+	color: $black;
+}
+
+h2 {
+	font-size: 24pt;
+	color: $black;
+}
+
+h3 {
+	font-size: 18pt;
+	color: $black;
+}
+
+p {
+	font-size: 14pt;
+	color: $light-grey;
+}
+
+p.active , 
+p > *.active {
+	background: transparent;
+	color: $electric;
+}
+
+/*
+	Tool Bar
+*/
 #tool-bar {
+	box-sizing: border-box;
 	position: fixed;
 	left: 0;
 	top: 0;
+	z-index: 10;
 	height: $top-bar-height;
 	width: 100%;
-	background-color: $light-grey;
+	padding: 16px 0px;
+	border-bottom: 2px solid $white-grey;
+	background-color: $white;
 }
 
-section {
+	#tool-bar > div {
+		height: 100%;
+		display: flex;
+		margin: auto;
+		width: 80%;
+	}
+
+	#tool-bar .logo {
+		height: 100%;
+	}
+
+	#steps {
+		flex: 1;
+		-webkit-box-flex: 1;
+		-webkit-flex: 1;
+		padding: 8px 16px 0px 16px;
+		overflow: hidden;
+		text-align: right;
+	}
+
+	#steps span {
+		padding: 0px 8px;
+	}
+/*
+	Furniture type Selection 
+*/
+
+#furniture-types {
+	box-sizing: border-box;
+	height: 100vh;
+	width: 100%;
 	padding-top: $top-bar-height;
+	user-select: false;
+	margin: auto;
 }
 
-.dropzone {
-	background-color: 200px;
-	background-color: red;
-}
+	#furniture-types > div {
+		box-sizing: border-box;
+		padding: 16px;
+		display: table;
+		float: left;
+		height: 100%;
+		width: 50%;
+	}
 
+	#furniture-types > div > div {
+		display: table-cell;
+		height: 100%;
+		width: 100%;
+		vertical-align: middle;
+		overflow: hidden;
+		opacity: .7;
+		transition: .3s;
+	}
 
+	#furniture-types > div:hover  > div{
+		opacity: 1.0;
+		background-color: $electric
+	}
 
-.image-list {
+	#furniture-types > div:active > div {
+		opacity: 1.0;
+		background-color: $electric
+	}
+
+	#table {
+		text-align: right;
+	}
+
+	#chair {
+		text-align: left;
+	}
+
+	#furniture-types  img {
+		display: inline-block;
+		width: 300px;
+		max-width: 90%;
+	}
+
+	#furniture-types h3 {
+		
+	}
+
+/* 
+	Image list
+*/
+
+#image-list {
 	text-align: center;
 }
 
-.image-list>div {
-	display: inline-block;
-	text-align: center;
+	#image-list > div {
+		display: inline-block;
+		text-align: center;
+	}
+
+	.dropzone {
+		display: block;
+		width: 90%;
+		margin: 8px auto;
+		padding: 24px;
+		opacity: 0.7;
+		background-color: $white-grey;
+		transition: .3s;
+		text-align: center;
+	}
+
+	.image-item {
+		display: inline-block;
+		margin: 8px;
+		padding: 24px;
+		opacity: 0.7;
+		background-color: $white-grey;
+		transition: .3s;
+	}
+
+	.image-item:hover,
+	.dropzone:hover {
+		opacity: 1.0;
+		background-color: $electric;
+	}
+
+	.image-item.active {
+		opacity: 1.0;
+		background-color: $electric;
+	}
+
+	.image {
+		width: 256px;
+		height: 256px;
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+
+/* 
+	email
+*/
+
+#email {
+	padding-top: $top-bar-height;
+	display: table;
+	box-sizing: border-box;
+	width: 100%;
+	height: 100vh;
 }
 
-.image-item {
-	display: inline-block;
-	margin: 8px;
-	padding: 24px;
-	background-color: $light-grey;
-}
+	#email > div {
+		display: table-cell;
+		vertical-align: middle;
+		text-align: center;
+	}
 
-.image {
-	width: 256px;
-	height: 256px;
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
-}
+	#email > div > div {
+		width: 500px;
+		max-width: 90%;
+		padding-bottom: 64px;
+		display: flex;
+		display: -webkit-flex;
+		margin: auto;
+	}
 
+	#email > div > div > * {
+		box-sizing: border-box;
+		padding: 16px;
+		transition: .3s;
+	}
+
+	#email p {
+		flex: 1;
+		-webkit-flex: 1;
+		-webkit-box-flex: 1;
+		outline: 0;
+		text-align: left;
+		background-color: $white;
+		border: 4px solid $electric;
+	}
+
+	#email button {
+		background-color: $black;
+		border: 0;
+		color: $white;
+		font-size: 14pt;
+		font-weight: normal;
+		margin-left: 8px;
+	}
+
+	#email button:hover,
+	#email button:focus,
+	#email button:active {
+		background-color: $electric;
+	}
