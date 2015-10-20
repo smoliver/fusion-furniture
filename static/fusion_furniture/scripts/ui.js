@@ -99,7 +99,7 @@ var ProgramSteps = function (){
 
 	this.submit = function (){
 		var table = isTable ? 1 : 0;
-		var url = "https://www.wolframcloud.com/objects/3e4dcd10-28d8-44cd-9e9e-9851af261134?url1=" 
+		var url = "https://www.wolframcloud.com/objects/48fce9af-7618-4c44-9982-1296801d6357?url1=" 
 		+ front + "&url2=" + side + "&email=" + email + "&table=" + table;
 		console.log(url);
 		$.get(url, function( data ) {
